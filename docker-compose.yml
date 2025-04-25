@@ -1,17 +1,26 @@
 version: '3.1'
-
 services:
   db:
     image: postgres:13
-    container_name: instatic_postgres
+    container_name: dbDjango2
     environment:
-      POSTGRES_DB: instatic_db
-      POSTGRES_USER: instatic_user
-      POSTGRES_PASSWORD: instatic_pass
+      - POSTGRES_DB=ITIC_DB
+      - POSTGRES_PASSWORD=ITIC
+      - POSTGRES_USER=ITIC_user
     ports:
       - "5432:5432"
     volumes:
-      - pgdata:/var/lib/postgresql/data
-
+      - local_pgdata:/var/lib/postgresql/data
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin5Django
+    ports:
+      - "80:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: 2024_stephen.garcia@iticbcn.cat
+      PGADMIN_DEFAULT_PASSWORD: stephen123
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
 volumes:
-  pgdata:
+  local_pgdata:
+  pgadmin-data:
