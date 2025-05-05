@@ -38,3 +38,13 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"{self.user.username} commented on Post {self.post.id}"
+
+class Usuario(models.Model):
+    id = models.AutoField(primary_key=True)
+    email = models.EmailField(max_length=255, unique=True)
+    nombre = models.CharField(max_length=100)
+    apellido = models.CharField(max_length=100)
+    password = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f"{self.nombre} {self.apellido} ({self.email})"
