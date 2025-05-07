@@ -1,0 +1,12 @@
+<script src="https://unpkg.com/htmx.org@1.9.10"></script>
+
+<div>
+    <p><strong>Nombre de usuario:</strong> {{ form.instance.username }}</p>
+    <p><strong>Email:</strong> {{ form.instance.email }}</p>
+    <button
+        hx-get="{% url 'perfil' %}"
+        hx-target="this"
+        hx-swap="outerHTML">
+        Editar
+    </button>
+</div>

@@ -8,7 +8,7 @@ class User(models.Model):
     avatar = models.ImageField(upload_to='avatars/', blank=True, null=True)
     creation_date = models.DateTimeField(default=timezone.now)
     bio = models.CharField(max_length=200)
-    followers = models.ManyToManyField(blank=True)
+    followers = models.ManyToManyField('self', blank=True)
 
     def __str__(self):
         return self.username

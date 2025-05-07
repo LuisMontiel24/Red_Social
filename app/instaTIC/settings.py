@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'app',
 ]
 
 MIDDLEWARE = [
@@ -75,9 +76,9 @@ WSGI_APPLICATION = 'instaTIC.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'instatic_db',
-        'USER': 'instatic_user',
-        'PASSWORD': 'instatic_pass',
+        'NAME': 'ITIC_DB',       # De tu docker-compose
+        'USER': 'ITIC_user',     # De tu docker-compose
+        'PASSWORD': 'ITIC',      # De tu docker-compose
         'HOST': 'localhost',
         'PORT': '5432',
     }
